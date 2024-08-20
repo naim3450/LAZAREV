@@ -1,0 +1,862 @@
+@font-face {
+    font-family: neuee;
+    src: url(./Font/NeueHaasDisplayLight.ttf);
+}
+
+@font-face {
+    font-family: neue;
+    src: url(./Font/NeueHaasDisplayMediu.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: neue;
+
+}
+
+html body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #111111;
+}
+
+/* -------------------nav start---------------- */
+nav {
+    position: fixed;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    background: #111111;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vh 10.4vw;
+    transition: .2s;
+    z-index: 100;
+}
+
+nav h1 {
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+.nav-part2 {
+    display: flex;
+    gap: 1.3vw;
+    margin-left: 3.7vw;
+}
+
+.nav-part2 h4 {
+    font-size: 0.79vw;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav button {
+    background-color: transparent;
+    padding: 1vw;
+    height: 3vw;
+    width: 10vw;
+    font-size: 0.87vw;
+    text-transform: uppercase;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    border: none;
+    position: relative;
+}
+
+nav button h3 {
+    z-index: 1;
+}
+
+nav button i {
+    z-index: 1;
+    margin-left: 1.2vw;
+}
+
+nav button::after {
+    content: '';
+    position: absolute;
+    height: 3vw;
+    width: 10vw;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    background-color: #0DA34E;
+    transition: 0.3s;
+}
+
+nav button:hover::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5vw;
+    width: 2.5vw;
+    left: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: #0DA34E;
+}
+
+#nav-bottom {
+    height: 0%;
+    width: 79%;
+    background-color: #111111;
+    position: absolute;
+    top: 100%;
+    border-bottom: 1px solid #6b6b6b;
+    transition: all ease 0.65s;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2.2vw;
+    transition: .5s;
+}
+
+
+.bottom-div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+    font-size: 1vw;
+}
+
+.bottom-div h5 {
+    opacity: 0;
+    display: none;
+}
+
+/* ------------------nav end----------------- */
+
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ------------------page1 start------------------ */
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#page1 h1 {
+    font-size: 8vw;
+    text-transform: uppercase;
+    width: 1400px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 8vw;
+}
+
+#page1 h1 svg {
+    background-color: #0DA34E;
+    border-radius: 50%;
+    height: 6vw;
+    padding: 1vw 1vw;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#page1 p {
+    font-weight: 400;
+    margin-top: 2vh;
+    width: 35vw;
+    text-align: center;
+}
+
+#page_deatils {
+    display: flex;
+    margin-top: 0.5vh;
+}
+
+#page_deatils h4 {
+    display: flex;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 0.5vh;
+}
+
+#page_deatils h4:nth-last-child(2) {
+    border: none;
+    padding: 10px 3px;
+}
+
+#moving_div {
+    width: 40%;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    bottom: 2vw;
+
+}
+
+#moving_div .move {
+    display: flex;
+    gap: 2vw;
+    justify-items: center;
+    align-items: center;
+    animation: move 9s linear;
+    animation-timing-function: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#blur-left {
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(to left, transparent, #111);
+    position: absolute;
+    z-index: 1;
+}
+
+#blur-right {
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(to right, transparent, #111);
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+/* ----------------page1 end----------------- */
+
+/* ----------------page2 start----------------- */
+#page2 {
+    height: 100vh;
+    width: 100%;
+    background: #111111;
+    display: flex;
+    padding: 0 10.4vw;
+    padding-bottom: 8vw;
+}
+
+#page2-left {
+    height: 100%;
+    width: 50%;
+    background: #1111;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4vh 0;
+    border-top: 1px solid gray;
+}
+
+#page2-left p {
+    font-size: 1vw;
+}
+
+#page2-left h5 {
+    font-size: 1.1vw;
+    width: 60%;
+    font-family: neue;
+    font-weight: 500;
+}
+
+#page2-right {
+    height: 100%;
+    width: 50%;
+    border-top: 1px solid gray;
+    overflow: hidden;
+}
+
+.right-elem {
+    position: relative;
+    padding-top: 2vw;
+    padding-bottom: 3.2vw;
+    border-bottom: 1px solid gray;
+    overflow: hidden;
+}
+
+.right-elem h2 {
+    font-size: 1.4vw;
+    font-family: neuee;
+    font-weight: 500;
+}
+
+.right-elem img {
+    /* top: 50%; */
+    position: absolute;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    object-fit: cover;
+    /* top: 50%; */
+    scale: 0;
+    opacity: 0;
+    /* transform: translateY(-50%); */
+}
+
+/* ----------------page2 end----------------- */
+
+/* ----------------page3 start----------------- */
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #111111;
+    padding: 0 10.4vw;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#page3 .one {
+    width: 80%;
+    height: 76%;
+    aspect-ratio: 3/2;
+    background-color: #111111;
+    inset: 0%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#page3 .icon {
+    position: absolute;
+    height: 8vw;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5.5vw;
+    z-index: 1;
+    background-color: #8b8b8b6d;
+}
+
+#page3 .icon:hover {
+    background-color: #0DA34E;
+    transition: 0.2s;
+}
+
+#page3 .two {
+    width: 0%;
+    background-color: #111111;
+    height: 0%;
+    inset: 0%;
+    object-fit: cover;
+    z-index: 111;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border-radius: 30px; */
+    position: fixed;
+    opacity: 0;
+}
+
+/* ----------------page3 end----------------- */
+
+
+/* ----------------page4 start----------------- */
+#page4 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    padding: 3vh 10.4vw;
+}
+
+#page4 .section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sec-left {
+    height: 80vh;
+    width: 22%;
+    border-top: 2px solid #111;
+    padding-top: 3vh;
+}
+
+.sec-left h2 {
+    color: #000;
+    font-size: 1.9vw;
+    font-family: neuee;
+    font-weight: 500;
+}
+
+.sec-left p {
+    color: #000;
+    font-size: 1.2vw;
+    font-family: neuee;
+    font-weight: 500;
+    margin-top: 10vh;
+}
+
+.sec-right {
+    height: 100%;
+    width: 72%;
+    position: relative;
+    background-color: #0DA34E;
+}
+
+.sec-right video {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ----------------page4 end----------------- */
+
+/* ----------------page5 start----------------- */
+#page5 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #111111;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3vh 10.4vw;
+}
+
+#page5>button {
+    padding: 1.2vw 2vw;
+    background-color: #0DA34E;
+    border-radius: 30px;
+    border: none;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+#page5>button i {
+    font-size: 1.2vw;
+}
+
+#page5-right {
+    width: 70%;
+}
+
+#page5-right>p {
+    font-size: 2vw;
+    font-family: neuee;
+    font-weight: 400;
+
+}
+
+#page5-right>p>span {
+    font-size: 1vw;
+    font-family: neuee;
+    font-weight: 400;
+    width: 23.6vw;
+    display: inline-block;
+}
+
+
+#page5-content {
+    width: 100%;
+}
+
+#page5-content .uiux {
+    /* width: 100%; */
+    margin-top: 5vh;
+    border-top: 1px solid gray;
+}
+
+#page5-content h1 {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#page5-content h1 i {
+    font-family: neuee;
+    font-weight: 300;
+}
+
+#page5-content #flex {
+    display: flex;
+    gap: 0.3vw;
+}
+
+#page5-content #flex h4 {
+    padding: 0.4vw 1vw;
+    border: 1px solid grey;
+    border-radius: 20px;
+    font-size: 0.8vw;
+    margin-top: 4vh;
+}
+
+
+#page-container {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.page5-elem {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid gray;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.page5-elem h3 {
+    font-size: 1.2vw;
+    width: 20%;
+}
+
+.page5-elem p {
+    font-size: 1vw;
+    width: 60%;
+    font-family: neuee;
+    font-weight: 500;
+}
+
+.page5-elem i {
+    font-size: 1.2vw;
+}
+
+.page5-elem .over {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    background-color: #6b6b6b39;
+    transition: 0.5s;
+}
+
+.page5-elem:hover .over {
+    top: 0;
+    transition: 0.5s;
+}
+
+.page5-elem:hover {
+    border-top: 2px solid #fff;
+    transition: 0.6s;
+}
+
+summary::marker {
+    content: '';
+}
+
+
+/* ----------------page5 end----------------- */
+
+/* ----------------page6 start----------------- */
+#page6 {
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10.4vw;
+    background-color: #fff;
+}
+
+#page6 #page6-content {
+    display: flex;
+    align-items: center;
+}
+
+#blue-btn {
+    background-color: #4f5bff;
+    height: 3.5vw;
+    width: 15vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 100px;
+    margin-top: 8vh;
+
+}
+
+#blue-btn h4 {
+    text-transform: uppercase;
+    font-size: 0.8vw;
+}
+
+#blue-btn h4 i {
+    font-size: 1vw;
+    margin-left: 0.8vw;
+}
+
+#right-6 {
+    width: 41vw;
+    padding-top: 7vh;
+    margin-left: 4vw;
+}
+
+.title {
+    margin-bottom: 2vw;
+}
+
+.title1 {
+    height: 15vh;
+    overflow: hidden;
+}
+
+.title2 {
+    height: 15vh;
+    overflow: hidden;
+}
+
+.title1 h1 {
+    font-size: 6vw;
+    text-align: center;
+    color: #111111;
+}
+
+.title2 h1 {
+    font-size: 6vw;
+    text-align: center;
+    color: #111111;
+}
+
+#right-6 p {
+    width: 41vw;
+    color: #111111;
+    font-size: 1.5vw;
+    font-family: neuee;
+    font-weight: 500;
+    margin-bottom: 4vw;
+}
+
+#page6-bottom {
+    height: 44vh;
+    width: 100%;
+    border-top: 1px solid #dadada;
+    display: flex;
+    /* background-color: #0DA34E; */
+}
+
+#btm6-part1 {
+    width: 30%;
+    border-right: 1px solid #dadada;
+}
+
+#btm6-part2 {
+    width: 25%;
+    border-right: 1px solid #dadada;
+}
+
+#btm6-part3 {
+    width: 15%;
+    border-right: 1px solid #dadada;
+}
+
+#btm6-part4 {
+    width: 17%;
+    border-right: 1px solid #dadada;
+}
+
+#btm6-part5 {
+    width: 13%;
+    border-right: 1px solid #dadada;
+}
+
+
+.btm6-parts h5 {
+    color: #111111;
+    font-size: 0.99vw;
+    font-family: neuee;
+    font-weight: 600;
+    margin-top: 3vh;
+    margin-bottom: 6vh;
+    margin-left: 0.3vw;
+}
+
+.btm6-parts h4 {
+    background-color: #111111;
+    margin-top: 0.4vh;
+    width: 65%;
+    border-radius: 50px;
+    padding: 0.8vh 0;
+    font-size: 0.8vw;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5vh;
+}
+
+.btm6-parts h4 span {
+    background-color: #333;
+    width: 1.5vw;
+    height: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+}
+
+/* ----------------page6 end----------------- */
+/* ----------------page7 start----------------- */
+#page7 {
+    height: 100vh;
+    width: 100%;
+    padding: 0 10.4vw;
+    background-color: #111111;
+    overflow: hidden;
+}
+
+
+.AI {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.AI .page7-left {
+    height: 100%;
+    width: 20%;
+    border-top: 1px solid gray;
+    z-index: 10;
+    margin-top: 3vw;
+
+}
+
+.page7-left h1 {
+    font-size: 3vw;
+}
+
+.page7-left p {
+    font-size: 1vw;
+    margin: 2vw 0;
+}
+
+.page7-left button {
+    font-size: 0.9vw;
+    background-color: #4f5bff;
+    border: none;
+    padding: 1.2vw 1.2vw;
+    border-radius: 50px;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.page7-left button i {
+    margin-left: 1vw;
+    font-size: 1vw;
+}
+
+.AI .page7-right {
+    width: 72%;
+    height: 100%;
+    margin-top: 3vw;
+    /* display: flex; */
+    flex-direction: column;
+    /* gap: 2vh; */
+    position: relative;
+}
+
+.kabMain {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    padding-top: 2vw;
+    height: 20vh;
+    position: absolute;
+}
+
+.kabMain:hover {
+    border-top: 1px solid #fff;
+    transition: 0.3s;
+}
+
+.KababParagrap {
+    width: 70%;
+}
+
+.KababParagrap .ui {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.KababParagrap .ui h4 {
+    border: 1px solid gray;
+    padding: 0.5vw 1.5vw;
+    border-radius: 50px;
+    font-size: 0.8vw;
+    margin-top: 1vh;
+}
+
+.kabMain i {
+    font-size: 1.5vw;
+}
+
+.AiV-top {
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 10px;
+    top: 20vh;
+}
+
+.AiV-top .cursor {
+    position: absolute;
+    height: 9vw;
+    width: 9vw;
+    border-radius: 50%;
+    background-color: #4f5bff;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+
+.AiV-top video {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cursor h4 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2vw;
+    font-size: 1vw;
+}
+
+/* ----------------page7 end----------------- */
+
+/* ----------------page8 start----------------- */
+#page8 {
+    height: 100vh;
+    width: 100%;
+    padding: 0 10.4vw;
+    background-color: #fff;
+}
+
+/* ----------------page8 end----------------- */
