@@ -240,7 +240,7 @@ function page6Animation() {
         duration: 0.6,
         scrollTrigger: {
             trigger: '#page6',
-            scroller: "#main",
+            scroller: "body",
             start: "top 45%",
         },
         stagger: 0.2
@@ -252,7 +252,7 @@ function page6Animation() {
             duration: 0.8,
             scrollTrigger: {
                 trigger: '#btm6-part2',
-                scroller: '#main',
+                scroller: 'body',
                 start: 'top 95%',
                 end: 'top -65%',
                 scrub: true
@@ -312,7 +312,7 @@ function page7Animation() {
         transform: `translateY(-80%)`,
         scrollTrigger: {
             trigger: '#page7',
-            scroller: "#main",
+            scroller: "body",
             start: "top 10%",
             scrub: 2,
             pin: true
@@ -321,7 +321,7 @@ function page7Animation() {
 
 }
 
-locomotiveAnimation()
+// locomotiveAnimation()
 
 navAnimation()
 page2Animation()

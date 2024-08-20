@@ -21,11 +21,6 @@ html body {
     height: 100%;
     width: 100%;
 }
-
-body {
-    background-color: #111111;
-}
-
 /* -------------------nav start---------------- */
 nav {
     position: fixed;
