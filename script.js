@@ -33,27 +33,41 @@ function locomotiveAnimation() {
 function loadAnimation() {
     var tl = gsap.timeline()
 
-    tl.from('#page1', {
-        opacity: 0,
-        duration: 0.2,
-        delay: 0.2
+    gsap.to('#loader1', {
+        top: `-100%`,
+        duration: 2.2,
+        ease: "expo.out",
+    })
+    gsap.to('#loader2', {
+        top: `100%`,
+        duration: 2.2,
+        ease: "expo.out",
+    })
+    gsap.to('#loader3', {
+        left: `-100%`,
+        duration: 2.2,
+        ease: "expo.out",
+    })
+    gsap.to('#loader4', {
+        left: `100%`,
+        duration: 2.2,
+        ease: "expo.out",
     })
 
-    tl.from('#page1', {
-        transform: `scaleX(0.7) scale(0.2) translateY(80%)`,
-        borderRadius: `150px`,
-        duration: 2,
-        ease: "expo.out"
-    })
-    tl.from('nav', {
-        delay: -0.2,
-        opacity: 0
-    })
     tl.from('#page1 h1, #page1 p, #page1 div', {
+        delay: 1,
         opacity: 0,
-        duration: 0.6,
-        stagger: 0.1
+        duration: 1,
+        stagger: 0.2
     })
+    tl.to('nav', {
+        delay: 0.21,
+        opacity: 1
+    }, "-=2")
+
+    setTimeout(() => {
+        document.querySelector('body').style.overflow = `visible`
+    }, 3000)
 
 }
 
@@ -120,6 +134,35 @@ function navAnimation() {
             gsap.to('#nav-bottom', {
                 height: `0%`,
             }, "-=0.5")
+        })
+    });
+}
+
+function page1Animation() {
+    let page1 = document.getElementById('page1')
+    let elm = document.querySelectorAll('#page1 h1')
+
+    elm.forEach(el => {
+
+        el.addEventListener('mouseover', (e) => {
+            gsap.to('.page1-cursor', {
+                transform: `scale(1)`,
+                display: `block`
+            })
+        })
+
+        el.addEventListener('mousemove', function (e) {
+            gsap.to('.page1-cursor', {
+                left: e.x,
+                top: e.y,
+            })
+        })
+
+        el.addEventListener('mouseleave', function (e) {
+            gsap.to('.page1-cursor', {
+                transform: `scale(0)`,
+                display: `none`
+            })
         })
     });
 }
@@ -210,7 +253,7 @@ let truthyFalse = true
 let truthyFalse2 = true
 
 
-firstSum.addEventListener('click', function name() {
+firstSum.addEventListener('click', function () {
     truthyFalse = !truthyFalse
     if (truthyFalse == true) {
         ui.innerHTML = `UI/UX Design <i class="ri-arrow-up-s-line"></i>`
@@ -221,7 +264,7 @@ firstSum.addEventListener('click', function name() {
     }
 })
 
-secoundSum.addEventListener('click', function name() {
+secoundSum.addEventListener('click', function () {
     truthyFalse2 = !truthyFalse2
     if (truthyFalse2 == true) {
         ux.innerHTML = `Product Design <i class="ri-arrow-up-s-line"></i>`
@@ -299,7 +342,6 @@ function page7Animation() {
             })
         })
         el.addEventListener('mousemove', (e) => {
-            el.childNodes[3].load()
             gsap.to(el.childNodes[1], {
                 x: e.x - el.getBoundingClientRect().x - 80,
                 y: e.y - el.getBoundingClientRect().y - 100
@@ -320,14 +362,15 @@ function page7Animation() {
     })
 
 }
+loadAnimation()
 
 // locomotiveAnimation()
 
 navAnimation()
+page1Animation()
 page2Animation()
 page3VideoAnimat()
 page4Animation()
 // page5Animation()
 page6Animation()
 page7Animation()
-// loadAnimation()
