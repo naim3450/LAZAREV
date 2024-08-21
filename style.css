@@ -24,9 +24,12 @@ html body {
 
 /* -------------------loader start---------------- */
 body {
-    overflow: hidden;
     scroll-behavior: smooth;
     background: #111111;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 #loader1 {
